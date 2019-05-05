@@ -8,6 +8,8 @@ function post_install(){
     install_or_update_git_repo $giturl "$plugin_root/$pluginname" master
     [[ -e "$plugin_root/$pluginname/doc" ]] && \
         vim -c "helptags $plugin_root/$pluginname/doc" -c q
+
+    return 0
 }
 
 function post_update(){
